@@ -1,14 +1,14 @@
 version: '3'
 services:
   grafana:
-    image: ixendrax/telegraf-influxdb-grafana:latest
+    image: ghcr.io/ixendrax/syn-nas-dashboard:main
     container_name: grafana
     environment:
-      TZ: Europe/London
+      TZ: Australia/Sydney
     restart: unless-stopped
     volumes:
       - /volume1/docker/grafana:/var/lib/grafana
-      - /volume1/docker/grafana/influxdb:/var/lib/influxdb
+      - /volume1/docker/influxdb:/var/lib/influxdb
     ports:
       - 3003:3003
       - 5144:514/udp
